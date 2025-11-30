@@ -1,0 +1,822 @@
+{
+  "home-loan-flat-purchase": {
+    "id": "home-loan-flat-purchase",
+    "name": "Flat Purchase Loan",
+    "marathiName": "फ्लॅट खरेदी कर्ज",
+    "icon": "Home",
+    "description": "Purchase ready-to-move-in flats from reputed builders with flexible repayment options.",
+    "interestRate": "10.5% - 12.5% p.a.",
+    "maxAmount": "₹2.5 Crore",
+    "tenure": "Up to 30 years",
+    "category": "loan",
+    "benefits": [
+      "Competitive interest rates",
+      "Long repayment tenure",
+      "Minimal documentation",
+      "Quick approval process"
+    ],
+    "documents": {
+      "basicKyc": [
+        "Aadhar Card (आधार कार्ड)",
+        "PAN Card (पॅन कार्ड)",
+        "Passport Size Photos (पासपोर्ट साईझ फोटो)",
+        "Address Proof (पत्ता साक्ष)"
+      ],
+      "salaried": [
+        "Latest 3 months salary slips (शेवटचे 3 महिन्यांचे पगार पर्ची)",
+        "Last 2 years Form 16 (शेवटचे 2 वर्षांचे फॉर्म 16)",
+        "6 months salary account statement (6 महिन्यांचे पगार खात्याचे स्टेटमेंट)",
+        "Employment Certificate (नोकरीचा दाखला)"
+      ],
+      "business": [
+        "Last 3 years ITR (शेवटचे 3 वर्षांचे आयटीआर)",
+        "Balance Sheet & Profit/Loss (ताळेबंद आणि नफा-तोटा खाते)",
+        "Business Registration Proof (व्यवसाय नोंदणी पुरावा)",
+        "Business Address Proof (व्यवसाय पत्ता साक्ष)",
+        "1 year bank statement - Saving & Current (1 वर्षाचे बँक स्टेटमेंट - बचत आणि चालू खाते)"
+      ],
+      "property": [
+        "Sale Agreement (विक्री करार)",
+        "Sanction Map & Permission (मंजूर नकाशा आणि परवानगी)",
+        "NA Order Layout Map (एनए ऑर्डर लेआउट नकाशा)",
+        "7/12 Extract or Property Card (७/१२ उतारा किंवा मालमत्ता कार्ड)",
+        "Property Tax Receipts (मालमत्ता कर पावत्या)",
+        "Deed of Declaration (DOD) - for flats (डीड ऑफ डिक्लेरेशन)"
+      ]
+    },
+    "process": [
+      "Application submission with basic details",
+      "Document verification and property valuation",
+      "Credit appraisal and approval",
+      "Legal verification of property documents",
+      "Loan disbursement"
+    ]
+  },
+
+  "home-loan-house-purchase": {
+    "id": "home-loan-house-purchase",
+    "name": "House Purchase Loan",
+    "marathiName": "घर खरेदी कर्ज",
+    "icon": "Home",
+    "description": "Buy existing residential houses with attractive interest rates and easy documentation.",
+    "interestRate": "10.5% - 12.5% p.a.",
+    "maxAmount": "₹2 Crore",
+    "tenure": "Up to 30 years",
+    "category": "loan",
+    "benefits": [
+      "Ready-to-move-in houses",
+      "Flexible repayment options",
+      "Quick processing",
+      "Property insurance options"
+    ],
+    "documents": {
+      "basicKyc": [
+        "Aadhar Card (आधार कार्ड)",
+        "PAN Card (पॅन कार्ड)",
+        "Passport Size Photos (पासपोर्ट साईझ फोटो)",
+        "Address Proof (पत्ता साक्ष)"
+      ],
+      "salaried": [
+        "Latest 3 months salary slips (शेवटचे 3 महिन्यांचे पगार पर्ची)",
+        "Last 2 years Form 16 (शेवटचे 2 वर्षांचे फॉर्म 16)",
+        "6 months salary account statement (6 महिन्यांचे पगार खात्याचे स्टेटमेंट)",
+        "Employment Certificate (नोकरीचा दाखला)"
+      ],
+      "business": [
+        "Last 3 years ITR (शेवटचे 3 वर्षांचे आयटीआर)",
+        "Balance Sheet & Profit/Loss (ताळेबंद आणि नफा-तोटा खाते)",
+        "Business Registration Proof (व्यवसाय नोंदणी पुरावा)",
+        "Business Address Proof (व्यवसाय पत्ता साक्ष)",
+        "1 year bank statement - Saving & Current (1 वर्षाचे बँक स्टेटमेंट - बचत आणि चालू खाते)"
+      ],
+      "property": [
+        "Sale Agreement (विक्री करार)",
+        "Sanction Map & Permission (मंजूर नकाशा आणि परवानगी)",
+        "NA Order Layout Map (एनए ऑर्डर लेआउट नकाशा)",
+        "7/12 Extract or Property Card (७/१२ उतारा किंवा मालमत्ता कार्ड)",
+        "Property Tax Receipts (मालमत्ता कर पावत्या)"
+      ]
+    },
+    "process": [
+      "Property inspection and valuation",
+      "Document verification",
+      "Credit assessment",
+      "Loan sanction and disbursement"
+    ]
+  },
+
+  "home-loan-construction": {
+    "id": "home-loan-construction",
+    "name": "Construction Loan",
+    "marathiName": "बांधकाम कर्ज",
+    "icon": "Home",
+    "description": "Construct your dream home on owned plot with staged disbursement as per construction progress.",
+    "interestRate": "11% - 13% p.a.",
+    "maxAmount": "₹1.5 Crore",
+    "tenure": "Up to 25 years",
+    "category": "loan",
+    "benefits": [
+      "Staged disbursement",
+      "Technical guidance",
+      "Construction monitoring",
+      "Material procurement support"
+    ],
+    "documents": {
+      "basicKyc": [
+        "Aadhar Card (आधार कार्ड)",
+        "PAN Card (पॅन कार्ड)",
+        "Passport Size Photos (पासपोर्ट साईझ फोटो)",
+        "Address Proof (पत्ता साक्ष)"
+      ],
+      "salaried": [
+        "Latest 3 months salary slips (शेवटचे 3 महिन्यांचे पगार पर्ची)",
+        "Last 2 years Form 16 (शेवटचे 2 वर्षांचे फॉर्म 16)",
+        "6 months salary account statement (6 महिन्यांचे पगार खात्याचे स्टेटमेंट)",
+        "Employment Certificate (नोकरीचा दाखला)"
+      ],
+      "business": [
+        "Last 3 years ITR (शेवटचे 3 वर्षांचे आयटीआर)",
+        "Balance Sheet & Profit/Loss (ताळेबंद आणि नफा-तोटा खाते)",
+        "Business Registration Proof (व्यवसाय नोंदणी पुरावा)",
+        "Business Address Proof (व्यवसाय पत्ता साक्ष)",
+        "1 year bank statement - Saving & Current (1 वर्षाचे बँक स्टेटमेंट - बचत आणि चालू खाते)"
+      ],
+      "property": [
+        "Construction Estimate (बांधकाम अंदाज)",
+        "Sanction Map & Permission (मंजूर नकाशा आणि परवानगी)",
+        "NA Order Layout Map (एनए ऑर्डर लेआउट नकाशा)",
+        "7/12 Extract or Property Card (७/१२ उतारा किंवा मालमत्ता कार्ड)",
+        "Property Tax Receipts (मालमत्ता कर पावत्या)",
+        "Building Plan Approval (इमारत नकाशा मंजुरी)"
+      ]
+    },
+    "process": [
+      "Construction plan approval",
+      "Stage-wise disbursement planning",
+      "Regular site inspections",
+      "Progress-based fund release"
+    ]
+  },
+
+  "plot-purchase-loan": {
+    "id": "plot-purchase-loan",
+    "name": "Plot Purchase Loan",
+    "marathiName": "प्लॉट खरेदी कर्ज",
+    "icon": "MapPin",
+    "description": "Purchase residential plots with flexible repayment options and future construction planning.",
+    "interestRate": "11.5% - 13.5% p.a.",
+    "maxAmount": "₹75 Lakh",
+    "tenure": "Up to 20 years",
+    "category": "loan",
+    "benefits": [
+      "Plot only financing",
+      "Future construction planning",
+      "Location flexibility",
+      "Easy conversion to construction loan"
+    ],
+    "documents": {
+      "basicKyc": [
+        "Aadhar Card (आधार कार्ड)",
+        "PAN Card (पॅन कार्ड)",
+        "Passport Size Photos (पासपोर्ट साईझ फोटो)",
+        "Address Proof (पत्ता साक्ष)"
+      ],
+      "salaried": [
+        "Latest 3 months salary slips (शेवटचे 3 महिन्यांचे पगार पर्ची)",
+        "Last 2 years Form 16 (शेवटचे 2 वर्षांचे फॉर्म 16)",
+        "6 months salary account statement (6 महिन्यांचे पगार खात्याचे स्टेटमेंट)",
+        "Employment Certificate (नोकरीचा दाखला)"
+      ],
+      "business": [
+        "Last 3 years ITR (शेवटचे 3 वर्षांचे आयटीआर)",
+        "Balance Sheet & Profit/Loss (ताळेबंद आणि नफा-तोटा खाते)",
+        "Business Registration Proof (व्यवसाय नोंदणी पुरावा)",
+        "Business Address Proof (व्यवसाय पत्ता साक्ष)",
+        "1 year bank statement - Saving & Current (1 वर्षाचे बँक स्टेटमेंट - बचत आणि चालू खाते)"
+      ],
+      "property": [
+        "Plot Sale Agreement (प्लॉट विक्री करार)",
+        "Sanction Map & Permission (मंजूर नकाशा आणि परवानगी)",
+        "NA Order Layout Map (एनए ऑर्डर लेआउट नकाशा)",
+        "7/12 Extract or Property Card (७/१२ उतारा किंवा मालमत्ता कार्ड)",
+        "Property Tax Receipts (मालमत्ता कर पावत्या)"
+      ]
+    },
+    "process": [
+      "Plot verification and valuation",
+      "Legal document check",
+      "Loan approval",
+      "Disbursement to seller"
+    ]
+  },
+
+  "takeover-topup-loan": {
+    "id": "takeover-topup-loan",
+    "name": "Takeover Top-up Loan",
+    "marathiName": "टेकओव्हर टॉप-अप कर्ज",
+    "icon": "RefreshCw",
+    "description": "Transfer your existing home loan to better terms and get additional top-up amount for your needs.",
+    "interestRate": "11% - 13% p.a.",
+    "maxAmount": "₹50 Lakh (Top-up)",
+    "tenure": "Up to 20 years",
+    "category": "loan",
+    "benefits": [
+      "Better interest rates",
+      "Additional top-up amount",
+      "Balance transfer facility",
+      "Reduced EMI options"
+    ],
+    "documents": {
+      "basicKyc": [
+        "Aadhar Card (आधार कार्ड)",
+        "PAN Card (पॅन कार्ड)",
+        "Passport Size Photos (पासपोर्ट साईझ फोटो)",
+        "Address Proof (पत्ता साक्ष)"
+      ],
+      "salaried": [
+        "Latest 3 months salary slips (शेवटचे 3 महिन्यांचे पगार पर्ची)",
+        "Last 2 years Form 16 (शेवटचे 2 वर्षांचे फॉर्म 16)",
+        "6 months salary account statement (6 महिन्यांचे पगार खात्याचे स्टेटमेंट)",
+        "Employment Certificate (नोकरीचा दाखला)"
+      ],
+      "business": [
+        "Last 3 years ITR (शेवटचे 3 वर्षांचे आयटीआर)",
+        "Balance Sheet & Profit/Loss (ताळेबंद आणि नफा-तोटा खाते)",
+        "Business Registration Proof (व्यवसाय नोंदणी पुरावा)",
+        "Business Address Proof (व्यवसाय पत्ता साक्ष)",
+        "1 year bank statement - Saving & Current (1 वर्षाचे बँक स्टेटमेंट - बचत आणि चालू खाते)"
+      ],
+      "property": [
+        "Loan Account Statement (कर्ज खाते स्टेटमेंट)",
+        "Loan Outstanding Letter (कर्ज बाकी पत्र)",
+        "Sanction Letter (मंजुरी पत्र)",
+        "7/12 Extract or Property Card (७/१२ उतारा किंवा मालमत्ता कार्ड)",
+        "Property Tax Receipts (मालमत्ता कर पावत्या)"
+      ]
+    },
+    "process": [
+      "Existing loan statement analysis",
+      "Balance transfer processing",
+      "Top-up amount approval",
+      "New loan disbursement"
+    ]
+  },
+
+  "loan-against-property": {
+    "id": "loan-against-property",
+    "name": "Loan Against Property",
+    "marathiName": "मालमत्तेवरील कर्ज",
+    "icon": "Building",
+    "description": "Get loans against your residential or commercial property for business expansion, education, or personal needs.",
+    "interestRate": "12% - 14% p.a.",
+    "maxAmount": "₹1 Crore",
+    "tenure": "Up to 15 years",
+    "category": "loan",
+    "benefits": [
+      "Higher loan amounts",
+      "Long repayment tenure",
+      "Continue to use your property",
+      "Multipurpose usage of funds"
+    ],
+    "documents": {
+      "basicKyc": [
+        "Aadhar Card (आधार कार्ड)",
+        "PAN Card (पॅन कार्ड)",
+        "Passport Size Photos (पासपोर्ट साईझ फोटो)",
+        "Address Proof (पत्ता साक्ष)"
+      ],
+      "salaried": [
+        "Latest 3 months salary slips (शेवटचे 3 महिन्यांचे पगार पर्ची)",
+        "Last 2 years Form 16 (शेवटचे 2 वर्षांचे फॉर्म 16)",
+        "6 months salary account statement (6 महिन्यांचे पगार खात्याचे स्टेटमेंट)"
+      ],
+      "business": [
+        "Last 3 years ITR (शेवटचे 3 वर्षांचे आयटीआर)",
+        "Balance Sheet & Profit/Loss (ताळेबंद आणि नफा-तोटा खाते)",
+        "Business Registration Proof (व्यवसाय नोंदणी पुरावा)",
+        "1 year bank statement (1 वर्षाचे बँक स्टेटमेंट)"
+      ],
+      "property": [
+        "7/12 Extract or Property Card (७/१२ उतारा किंवा मालमत्ता कार्ड)",
+        "Property Tax Receipts (मालमत्ता कर पावत्या)",
+        "Title Deeds (मालकी हक्क दस्तऐवज)",
+        "Location Plan (स्थान नकाशा)",
+        "Building Approval Plan (इमारत मंजुरी नकाशा)"
+      ]
+    },
+    "process": [
+      "Property valuation and document verification",
+      "Credit assessment and approval",
+      "Mortgage creation and registration",
+      "Loan disbursement to your account"
+    ]
+  },
+
+  "education-loan": {
+    "id": "education-loan",
+    "name": "Education Loan",
+    "marathiName": "शैक्षणिक कर्ज",
+    "icon": "GraduationCap",
+    "description": "Fund your education in India or abroad with flexible repayment options and competitive interest rates.",
+    "interestRate": "10% - 12% p.a.",
+    "maxAmount": "₹50 Lakh",
+    "tenure": "Up to 15 years",
+    "category": "loan",
+    "benefits": [
+      "Moratorium period available",
+      "No collateral for smaller amounts",
+      "Coverage for all expenses",
+      "Flexible repayment options"
+    ],
+    "documents": {
+      "basicKyc": [
+        "Aadhar Card (आधार कार्ड)",
+        "PAN Card (पॅन कार्ड)",
+        "Passport Size Photos (पासपोर्ट साईझ फोटो)",
+        "Address Proof (पत्ता साक्ष)"
+      ],
+      "student": [
+        "Degree Certificate (पदवी दाखला)",
+        "Mark sheets (10th, 12th, Graduation) (गुणपत्रिका - 10वी, 12वी, ग्रॅज्युएशन)",
+        "Bonafide Certificate (बोनाफाइड प्रमाणपत्र)",
+        "Fee Structure (शुल्क रचना)",
+        "Admission Letter (प्रवेश पत्र)"
+      ],
+      "coApplicant": [
+        "Latest 3 months salary slips (for salaried) (शेवटचे 3 महिन्यांचे पगार पर्ची)",
+        "Last 3 years ITR (for business) (शेवटचे 3 वर्षांचे आयटीआर)",
+        "6 months bank statement (6 महिन्यांचे बँक स्टेटमेंट)"
+      ]
+    },
+    "process": [
+      "Submit application with educational details",
+      "Document verification and institute confirmation",
+      "Credit appraisal of co-applicant",
+      "Loan sanction and disbursement to institute"
+    ]
+  },
+
+  "project-loan": {
+    "id": "project-loan",
+    "name": "Project Loan",
+    "marathiName": "प्रकल्प कर्ज",
+    "icon": "Briefcase",
+    "description": "Funding for business projects, expansions, and new ventures with customized repayment plans.",
+    "interestRate": "13% - 15% p.a.",
+    "maxAmount": "₹2 Crore",
+    "tenure": "Up to 10 years",
+    "category": "loan",
+    "benefits": [
+      "Customized repayment schedules",
+      "Working capital support",
+      "Business expansion funding",
+      "Technical feasibility assessment"
+    ],
+    "documents": {
+      "basicKyc": [
+        "Aadhar Card (आधार कार्ड)",
+        "PAN Card (पॅन कार्ड)",
+        "Passport Size Photos (पासपोर्ट साईझ फोटो)",
+        "Address Proof (पत्ता साक्ष)"
+      ],
+      "business": [
+        "Last 3 years ITR (शेवटचे 3 वर्षांचे आयटीआर)",
+        "Balance Sheet & Profit/Loss (ताळेबंद आणि नफा-तोटा खाते)",
+        "Business Registration Proof (व्यवसाय नोंदणी पुरावा)",
+        "Business Plan & Project Report (व्यवसाय योजना आणि प्रकल्प अहवाल)",
+        "2 years bank statements (2 वर्षांचे बँक स्टेटमेंट)"
+      ],
+      "project": [
+        "Project Feasibility Report (प्रकल्प साध्यता अहवाल)",
+        "Cost Estimates (खर्च अंदाज)",
+        "Revenue Projections (उत्पन्न अंदाज)",
+        "Licenses & Permits (परवाने आणि परवानग्या)",
+        "Technical Specifications (तांत्रिक तपशील)"
+      ]
+    },
+    "process": [
+      "Project proposal submission and feasibility study",
+      "Business plan evaluation",
+      "Technical and financial appraisal",
+      "Loan sanction and disbursement in phases"
+    ]
+  },
+
+  "machine-loan": {
+    "id": "machine-loan",
+    "name": "Machine Loan",
+    "marathiName": "यंत्रसामग्री कर्ज",
+    "icon": "Settings",
+    "description": "Finance for machinery, equipment, and technology upgrades to enhance your business productivity.",
+    "interestRate": "11% - 13% p.a.",
+    "maxAmount": "₹75 Lakh",
+    "tenure": "Up to 7 years",
+    "category": "loan",
+    "benefits": [
+      "Modern equipment financing",
+      "Technology upgrade support",
+      "Maintenance cost coverage",
+      "Quick processing for established businesses"
+    ],
+    "documents": {
+      "basicKyc": [
+        "Aadhar Card (आधार कार्ड)",
+        "PAN Card (पॅन कार्ड)",
+        "Passport Size Photos (पासपोर्ट साईझ फोटो)",
+        "Address Proof (पत्ता साक्ष)"
+      ],
+      "business": [
+        "Last 3 years ITR (शेवटचे 3 वर्षांचे आयटीआर)",
+        "Balance Sheet & Profit/Loss (ताळेबंद आणि नफा-तोटा खाते)",
+        "Business Registration Proof (व्यवसाय नोंदणी पुरावा)",
+        "1 year bank statements (1 वर्षाचे बँक स्टेटमेंट)"
+      ],
+      "machine": [
+        "Machine Quotation (यंत्रसामग्री क्वोटेशन)",
+        "Technical Specifications (तांत्रिक तपशील)",
+        "Supplier Details (पुरवठादार तपशील)",
+        "Installation Plan (स्थापना योजना)"
+      ]
+    },
+    "process": [
+      "Machine quotation and technical evaluation",
+      "Business viability assessment",
+      "Supplier verification and approval",
+      "Loan disbursement directly to supplier"
+    ]
+  },
+
+  "doctor-loan": {
+    "id": "doctor-loan",
+    "name": "Doctor Loan",
+    "marathiName": "डॉक्टर कर्ज",
+    "icon": "User",
+    "description": "Specialized loans for medical professionals to setup clinics, purchase equipment, or expand practice.",
+    "interestRate": "10.5% - 12.5% p.a.",
+    "maxAmount": "₹1 Crore",
+    "tenure": "Up to 10 years",
+    "category": "loan",
+    "benefits": [
+      "Special rates for medical professionals",
+      "Clinic setup financing",
+      "Medical equipment funding",
+      "Practice expansion support"
+    ],
+    "documents": {
+      "basicKyc": [
+        "Aadhar Card (आधार कार्ड)",
+        "PAN Card (पॅन कार्ड)",
+        "Passport Size Photos (पासपोर्ट साईझ फोटो)",
+        "Address Proof (पत्ता साक्ष)"
+      ],
+      "professional": [
+        "Medical Degree Certificate (वैद्यकीय पदवी दाखला)",
+        "Medical Council Registration (वैद्यकीय परिषद नोंदणी)",
+        "Practice Certificate (व्यवसाय प्रमाणपत्र)",
+        "Clinic Registration (चिकित्सालय नोंदणी)"
+      ],
+      "income": [
+        "Last 3 years ITR (शेवटचे 3 वर्षांचे आयटीआर)",
+        "6 months bank statements (6 महिन्यांचे बँक स्टेटमेंट)",
+        "Practice Income Proof (व्यवसाय उत्पन्न पुरावा)"
+      ]
+    },
+    "process": [
+      "Professional qualification verification",
+      "Practice establishment assessment",
+      "Income and credit evaluation",
+      "Loan sanction and equipment financing"
+    ]
+  },
+
+  "mortgage-registration": {
+    "id": "mortgage-registration",
+    "name": "Mortgage Registration",
+    "marathiName": "गहाण नोंदणी",
+    "icon": "FileText",
+    "description": "Complete mortgage registration services for property loans with legal documentation and compliance.",
+    "category": "mortgage",
+    "benefits": [
+      "Legal mortgage creation",
+      "Property charge registration",
+      "Stamp duty payment assistance",
+      "Registration department coordination"
+    ],
+    "documents": [
+      "Property Documents (मालमत्ता कागदपत्रे)",
+      "Loan Sanction Letter (कर्ज मंजुरी पत्र)",
+      "Identity Proof (ओळख पत्र)",
+      "Address Proof (पत्ता पुरावा)",
+      "Passport Size Photos (पासपोर्ट साईझ फोटो)"
+    ],
+    "process": [
+      "Document preparation and verification",
+      "Stamp duty payment and valuation",
+      "Registration appointment scheduling",
+      "Mortgage deed execution",
+      "Registration completion and document collection"
+    ],
+    "duration": "5-7 working days",
+    "cost": "Starting from ₹10,000 + Government Charges"
+  },
+
+  "equitable-mortgage": {
+    "id": "equitable-mortgage",
+    "name": "Equitable Mortgage",
+    "marathiName": "इक्विटेबल गहाण",
+    "icon": "FileLock",
+    "description": "Create equitable mortgage by deposit of title deeds without mandatory registration for faster processing.",
+    "category": "mortgage",
+    "benefits": [
+      "No registration required",
+      "Lower processing costs",
+      "Faster completion",
+      "Legal validity as registered mortgage"
+    ],
+    "documents": [
+      "Original Title Deeds (मूळ मालकी दस्तऐवज)",
+      "Property Card (मालमत्ता कार्ड)",
+      "7/12 Extract (७/१२ उतारा)",
+      "Loan Agreement (कर्ज करार)",
+      "Memorandum of Deposit (जमा करण्याचा मेमोरंडम)"
+    ],
+    "process": [
+      "Title deed verification and validation",
+      "Memorandum of deposit preparation",
+      "Deed deposit with lender",
+      "Legal documentation completion",
+      "Mortgage creation confirmation"
+    ],
+    "duration": "2-3 working days",
+    "cost": "Starting from ₹5,000"
+  },
+
+  "search-report": {
+    "id": "search-report",
+    "name": "Search Report",
+    "marathiName": "शोध अहवाल",
+    "icon": "FileSearch",
+    "description": "Comprehensive property title search and verification to ensure clear ownership and legal status.",
+    "category": "service",
+    "benefits": [
+      "Complete title chain verification",
+      "Legal opinion on property status",
+      "Encumbrance certificate",
+      "Mutation records verification"
+    ],
+    "documents": [
+      "7/12 Extract or Property Card (७/१२ उतारा किंवा मालमत्ता कार्ड)",
+      "Title Deeds (मालकी हक्क दस्तऐवज)",
+      "Previous Sale Deeds (मागील विक्री दस्तऐवज)",
+      "Property Tax Receipts (मालमत्ता कर पावत्या)",
+      "Survey Map (सर्व्हे नकाशा)"
+    ],
+    "process": [
+      "Document collection and verification",
+      "Revenue department record search",
+      "Title chain analysis",
+      "Legal opinion preparation",
+      "Search report delivery"
+    ],
+    "duration": "3-5 working days",
+    "cost": "Starting from ₹2,500"
+  },
+
+  "valuation-report": {
+    "id": "valuation-report",
+    "name": "Valuation Report",
+    "marathiName": "मूल्यांकन अहवाल",
+    "icon": "BarChart",
+    "description": "Professional property valuation by certified valuers for loan, insurance, or legal purposes.",
+    "category": "service",
+    "benefits": [
+      "Certified valuer assessment",
+      "Market value determination",
+      "Loan amount justification",
+      "Insurance valuation support"
+    ],
+    "documents": [
+      "7/12 Extract or Property Card (७/१२ उतारा किंवा मालमत्ता कार्ड)",
+      "Property Tax Receipts (मालमत्ता कर पावत्या)",
+      "Building Plan (इमारत नकाशा)",
+      "Photographs of Property (मालमत्तेच्या फोटो)",
+      "Location Details (स्थान तपशील)"
+    ],
+    "process": [
+      "Site visit and property inspection",
+      "Market analysis and comparison",
+      "Valuation calculation",
+      "Report preparation and certification"
+    ],
+    "duration": "2-3 working days",
+    "cost": "Starting from ₹3,000"
+  },
+
+  "estimate-cross-verification": {
+    "id": "estimate-cross-verification",
+    "name": "Estimate Cross Verification",
+    "marathiName": "अंदाज क्रॉस सत्यापन",
+    "icon": "Calculator",
+    "description": "Professional verification of construction estimates to ensure accuracy and prevent cost overruns.",
+    "category": "service",
+    "benefits": [
+      "Cost accuracy verification",
+      "Material quantity validation",
+      "Labor cost assessment",
+      "Budget optimization"
+    ],
+    "documents": [
+      "Construction Estimate (बांधकाम अंदाज)",
+      "Building Plans (इमारत नकाशा)",
+      "Material Specifications (साहित्य तपशील)",
+      "Site Details (साइट तपशील)"
+    ],
+    "process": [
+      "Detailed estimate analysis",
+      "Market rate verification",
+      "Quantity and rate cross-checking",
+      "Revised estimate preparation",
+      "Final report submission"
+    ],
+    "duration": "2-4 working days",
+    "cost": "Starting from ₹4,000"
+  },
+
+  "construction-estimate": {
+    "id": "construction-estimate",
+    "name": "Construction Estimate",
+    "marathiName": "बांधकाम अंदाज",
+    "icon": "ClipboardList",
+    "description": "Detailed construction cost estimation including materials, labor, and timeline planning.",
+    "category": "service",
+    "benefits": [
+      "Accurate cost projection",
+      "Material planning",
+      "Timeline estimation",
+      "Budget management"
+    ],
+    "documents": [
+      "Building Plans (इमारत नकाशा)",
+      "Plot Size Details (प्लॉट आकार तपशील)",
+      "Construction Specifications (बांधकाम तपशील)",
+      "Location Details (स्थान तपशील)"
+    ],
+    "process": [
+      "Site inspection and measurement",
+      "Material requirement calculation",
+      "Labor cost estimation",
+      "Timeline planning",
+      "Detailed estimate preparation"
+    ],
+    "duration": "3-5 working days",
+    "cost": "Starting from ₹5,000"
+  },
+
+  "ferfar-download": {
+    "id": "ferfar-download",
+    "name": "FERFAR Download",
+    "marathiName": "फेरफार डाउनलोड",
+    "icon": "Download",
+    "description": "Download FERFAR and mutation documents from revenue department for property transactions.",
+    "category": "service",
+    "benefits": [
+      "Official mutation records",
+      "Property transaction history",
+      "Ownership verification",
+      "Legal document acquisition"
+    ],
+    "documents": [
+      "Property Details (मालमत्ता तपशील)",
+      "Owner Identity Proof (मालक ओळख पत्र)",
+      "Previous Sale Deed (मागील विक्री दस्तऐवज)"
+    ],
+    "process": [
+      "Application submission at revenue office",
+      "Record search and verification",
+      "Document processing",
+      "FERFAR download and certification",
+      "Document delivery"
+    ],
+    "duration": "2-3 working days",
+    "cost": "Starting from ₹1,500"
+  },
+
+  "property-card": {
+    "id": "property-card",
+    "name": "Property Card Services",
+    "marathiName": "मालमत्ता कार्ड सेवा",
+    "icon": "CreditCard",
+    "description": "Property card extraction, verification, and update services for all property-related transactions.",
+    "category": "service",
+    "benefits": [
+      "Official property record",
+      "Ownership verification",
+      "Area and location details",
+      "Legal validity"
+    ],
+    "documents": [
+      "Survey Number (सर्व्हे नंबर)",
+      "Village/City Details (गाव/शहर तपशील)",
+      "Owner Identity Proof (मालक ओळख पत्र)"
+    ],
+    "process": [
+      "Application at Talathi/Tahsildar office",
+      "Record search and verification",
+      "Property card extraction",
+      "Verification and certification",
+      "Document delivery"
+    ],
+    "duration": "3-4 working days",
+    "cost": "Starting from ₹2,000"
+  },
+
+  "charge-creation": {
+    "id": "charge-creation",
+    "name": "Charge Creation on Property",
+    "marathiName": "मालमत्तेवर चार्ज निर्मिती",
+    "icon": "FileSignature",
+    "description": "Create legal charge on property for loan security with proper documentation and registration.",
+    "category": "service",
+    "benefits": [
+      "Legal security for lenders",
+      "Proper documentation",
+      "Registration compliance",
+      "Clear charge creation"
+    ],
+    "documents": [
+      "Property Documents (मालमत्ता कागदपत्रे)",
+      "Loan Agreement (कर्ज करार)",
+      "Charge Creation Form (चार्ज निर्मिती फॉर्म)",
+      "Identity Proof (ओळख पत्र)"
+    ],
+    "process": [
+      "Document preparation and verification",
+      "Charge creation application",
+      "Department submission",
+      "Registration processing",
+      "Charge certificate issuance"
+    ],
+    "duration": "5-7 working days",
+    "cost": "Starting from ₹7,000"
+  },
+
+  "electric-bill-transfer": {
+    "id": "electric-bill-transfer",
+    "name": "Electric Bill Name Transfer",
+    "marathiName": "वीज बिल नाव हस्तांतरण",
+    "icon": "Zap",
+    "description": "Transfer electricity connection and bill to new owner's name after property purchase.",
+    "category": "service",
+    "benefits": [
+      "Smooth utility transfer",
+      "Legal compliance",
+      "No service disruption",
+      "Proper documentation"
+    ],
+    "documents": [
+      "Property Documents (मालमत्ता कागदपत्रे)",
+      "Sale Deed (विक्री दस्तऐवज)",
+      "New Owner Identity Proof (नवीन मालक ओळख पत्र)",
+      "Current Electricity Bill (सध्याचे वीज बिल)"
+    ],
+    "process": [
+      "Document collection and verification",
+      "Application submission to electricity board",
+      "Meter inspection if required",
+      "Name transfer processing",
+      "New bill book issuance"
+    ],
+    "duration": "7-10 working days",
+    "cost": "Starting from ₹2,500"
+  },
+
+  "leave-license": {
+    "id": "leave-license",
+    "name": "Leave and License Agreement",
+    "marathiName": "लीव्ह अँड लायसन्स करार",
+    "icon": "FileText",
+    "description": "Professional leave and license agreement drafting and registration for rental properties.",
+    "category": "service",
+    "benefits": [
+      "Legal rental agreement",
+      "Stamp duty payment",
+      "Registration compliance",
+      "Tenant verification"
+    ],
+    "documents": [
+      "Owner Identity Proof (मालक ओळख पत्र)",
+      "Tenant Identity Proof (भाडेकरू ओळख पत्र)",
+      "Property Documents (मालमत्ता कागदपत्रे)",
+      "Address Proof (पत्ता पुरावा)"
+    ],
+    "process": [
+      "Document verification",
+      "Agreement drafting",
+      "Stamp paper purchase",
+      "Registration appointment",
+      "Agreement execution and registration"
+    ],
+    "duration": "3-5 working days",
+    "cost": "Starting from ₹3,000 + Government Charges"
+  }
+}
