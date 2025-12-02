@@ -85,7 +85,7 @@ function BankMarquee() {
       </div>
 
       {/* Custom CSS for animations */}
-      <style jsx>{`
+      <style>{`
         @keyframes marqueeForward {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }

@@ -6,10 +6,21 @@ import {
   Shield,
   Clock,
   Award,
-  ArrowRight
+  ArrowRight,
+  Calculator,
+  MessageCircle,
+  ChevronRight,
+  Check,
+  TrendingUp,
+  Sparkles,
+  Home as HomeIcon,
+  Phone,
+  Menu,
+  X
 } from 'lucide-react';
 import BankMarquee from '../Components/BankMarquee';
 import BannerSlider from '../Components/BannerSlider';
+import EmiCalculator from '../Components/EmiCalculator';
 import loanDetails from '../data/loanDetails.json';
 
 function Home() {
@@ -17,32 +28,28 @@ function Home() {
   const [searchQuery, setSearchQuery] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [activeTab, setActiveTab] = useState('loans');
+  const [showWhatsApp, setShowWhatsApp] = useState(true);
+  const [showEmiPopup, setShowEmiPopup] = useState(false);
+  const [isNavSticky, setIsNavSticky] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const emiPrefill = useMemo(() => ({ amount: 500000, rate: 8.5, tenure: 60 }), []);
+  const navRef = useRef(null);
 
-  const [isSearchSticky, setIsSearchSticky] = useState(false);
-  const searchWrapperRef = useRef(null);
-  const stickySentinelRef = useRef(null);
-
-  // ------------------------------
-  // ⭐ REAL Sticky Behavior Using IntersectionObserver
-  // ------------------------------
+  // Sticky navbar behavior
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsSearchSticky(!entry.isIntersecting);
-      },
-      { threshold: 1 }
-    );
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsNavSticky(true);
+      } else {
+        setIsNavSticky(false);
+      }
+    };
 
-    if (stickySentinelRef.current) {
-      observer.observe(stickySentinelRef.current);
-    }
-
-    return () => observer.disconnect();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // ------------------------------
   // Memoized services by category
-  // ------------------------------
   const { loanServices, mortgageServices, otherServices } = useMemo(() => {
     const services = Object.values(loanDetails);
     return {
@@ -52,19 +59,35 @@ function Home() {
     };
   }, []);
 
-  // ------------------------------
-  // Stats
-  // ------------------------------
+  // Stats with enhanced design
   const stats = useMemo(() => [
-    { number: "10+", label: "Years Experience", icon: Clock },
-    { number: "5000+", label: "Happy Customers", icon: Users },
-    { number: "15+", label: "Loan Products", icon: Award },
-    { number: "100%", label: "Trust & Safety", icon: Shield }
+    { 
+      number: "10+", 
+      label: "Years Experience", 
+      icon: Clock,
+      color: "text-orange-500"
+    },
+    { 
+      number: "5000+", 
+      label: "Happy Customers", 
+      icon: Users,
+      color: "text-amber-500"
+    },
+    { 
+      number: "15+", 
+      label: "Loan Products", 
+      icon: Award,
+      color: "text-yellow-500"
+    },
+    { 
+      number: "100%", 
+      label: "Trust & Safety", 
+      icon: Shield,
+      color: "text-red-500"
+    }
   ], []);
 
-  // ------------------------------
-  // Icons
-  // ------------------------------
+  // Icons mapping
   const customIcons = useMemo(() => ({
     "home-loan-flat-purchase": "https://cdn-icons-gif.flaticon.com/15586/15586092.gif",
     "home-loan-house-purchase": "https://cdn-icons-gif.flaticon.com/16677/16677925.gif",
@@ -94,9 +117,7 @@ function Home() {
     [customIcons]
   );
 
-  // ------------------------------
   // Search handling
-  // ------------------------------
   const handleSearch = useCallback((e) => {
     const query = e.target.value.toLowerCase();
     setSearchQuery(query);
@@ -122,9 +143,7 @@ function Home() {
     [navigate]
   );
 
-  // ------------------------------
   // Active services
-  // ------------------------------
   const activeServices = useMemo(() => {
     switch (activeTab) {
       case 'loans': return loanServices;
@@ -135,224 +154,300 @@ function Home() {
   }, [activeTab, loanServices, mortgageServices, otherServices]);
 
   const tabs = useMemo(() => [
-    { id: 'loans', name: 'Loan Products', count: loanServices.length },
-    { id: 'mortgage', name: 'Mortgage Services', count: mortgageServices.length },
-    { id: 'services', name: 'Other Services', count: otherServices.length }
+    { 
+      id: 'loans', 
+      name: 'Loan Products', 
+      count: loanServices.length,
+      color: 'text-orange-600'
+    },
+    { 
+      id: 'mortgage', 
+      name: 'Mortgage Services', 
+      count: mortgageServices.length,
+      color: 'text-amber-600'
+    },
+    { 
+      id: 'services', 
+      name: 'Other Services', 
+      count: otherServices.length,
+      color: 'text-yellow-600'
+    }
   ], [loanServices.length, mortgageServices.length, otherServices.length]);
 
-  // ------------------------------
-  // UI Rendering
-  // ------------------------------
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800">
+    <div className="min-h-screen bg-gradient-to-b from-orange-50 via-white to-amber-50 text-gray-800">
+      {/* Sticky Navigation Bar */}
+    
 
-      {/* HERO */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-4">
-        <BannerSlider />
-      </section>
+      {/* HERO Section */}
+      <BannerSlider/>
+      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 pt-8">
+        <BannerSlider services={[
+          {
+            title: "Home Loans",
+            description: "Get your dream home with attractive interest rates starting from 8.5% with flexible tenure up to 30 years",
+            icon: "🏠",
+            gradient: "bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600",
+            features: ["Lowest Interest Rates", "Quick Processing", "Minimal Documentation", "Balance Transfer"],
+            ctaText: "Apply Now"
+          },
+          {
+            title: "Business Loans",
+            description: "Grow your business with flexible financing up to ₹5 Crores for expansion, working capital, or equipment",
+            icon: "💼",
+            gradient: "bg-gradient-to-r from-amber-600 to-orange-600",
+            features: ["Collateral Free Options", "Digital Processing", "24-48 Hour Approval", "Customized Plans"],
+            ctaText: "Explore Loans"
+          },
+          {
+            title: "Education Loans",
+            description: "Invest in your future with 100% finance for higher education in India and abroad",
+            icon: "🎓",
+            gradient: "bg-gradient-to-r from-yellow-600 to-amber-600",
+            features: ["Cover Tuition & Living", "Moratorium Period", "Tax Benefits", "Co-applicant Options"],
+            ctaText: "Learn More"
+          }
+        ]} />
+      </section> */}
 
       <BankMarquee />
 
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
-
-        {/* Invisible marker for sticky detection */}
-        <div ref={stickySentinelRef}></div>
-
-        {/* Search Wrapper */}
-        <div
-          ref={searchWrapperRef}
-          className={`transition-all duration-300 mb-8 ${
-            isSearchSticky
-              ? "fixed top-0 left-0 right-0 bg-white z-50 shadow-md py-3"
-              : ""
-          }`}
-        >
-          <div className="max-w-4xl mx-auto">
-            {!isSearchSticky && (
-              <div className="text-center mb-4">
-                <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900">
-                  Your Trusted Financial Partner in <span className="text-orange-600">Maharashtra</span>
-                </h1>
-                <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
-                  Practical loan solutions with transparent terms and fast local support. Select a category below or search to find the right product.
-                </p>
-              </div>
-            )}
-
-            {/* Search Bar */}
-            <div className="relative mx-auto max-w-3xl">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input
-                type="text"
-                placeholder="Search loans, services, keywords..."
-                value={searchQuery}
-                onChange={handleSearch}
-                className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-orange-200 focus:border-orange-300 bg-white text-sm shadow-sm"
-              />
-
-              {suggestions.length > 0 && (
-                <div className="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-b-lg shadow-lg mt-1 z-50 max-h-72 overflow-y-auto">
-                  {suggestions.map((service) => (
-                    <div
-                      key={service.id}
-                      onClick={() => handleSuggestionClick(service)}
-                      className="px-4 py-3 cursor-pointer flex items-center gap-3 hover:bg-gray-50 transition"
-                    >
-                      <img src={getCustomIcon(service.id)} className="w-8 h-8" />
-                      <div className="flex-1">
-                        <div className="font-medium">{service.name}</div>
-                        <div className="text-xs text-gray-500">{service.marathiName}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
+      {/* Search Section */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-100 to-amber-100 px-4 py-2 rounded-full mb-4">
+            <Sparkles className="w-4 h-4 text-orange-600" />
+            <span className="text-sm font-semibold text-orange-700">Quick Search</span>
           </div>
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">
+            Find Your Perfect <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">Financial Solution</span>
+          </h2>
+          <p className="text-gray-600">
+            Search from our wide range of loan products and services
+          </p>
         </div>
 
-        {/* Spacer to prevent layout shift */}
-        {isSearchSticky && <div className="h-28"></div>}
+        {/* Search Bar */}
+        <div className="relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl blur opacity-10"></div>
+          <div className="relative">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-orange-400 w-5 h-5" />
+            <input
+              type="text"
+              placeholder="Search for loans, services, or type in मराठी..."
+              value={searchQuery}
+              onChange={handleSearch}
+              className="w-full pl-12 pr-4 py-4 rounded-xl border border-orange-200 focus:ring-2 focus:ring-orange-300 focus:border-orange-400 bg-white text-sm shadow-sm"
+            />
+          </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          {suggestions.length > 0 && (
+            <div className="absolute top-full left-0 right-0 bg-white border border-orange-200 rounded-b-xl shadow-lg mt-1 z-50 max-h-64 overflow-y-auto">
+              {suggestions.map((service) => (
+                <div
+                  key={service.id}
+                  onClick={() => handleSuggestionClick(service)}
+                  className="px-4 py-3 cursor-pointer flex items-center gap-3 hover:bg-orange-50 transition border-b border-orange-50 last:border-0"
+                >
+                  <img src={getCustomIcon(service.id)} className="w-8 h-8 rounded" />
+                  <div className="flex-1">
+                    <div className="font-medium text-gray-900">{service.name}</div>
+                    <div className="text-xs text-gray-500">{service.marathiName}</div>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-orange-400" />
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, idx) => {
             const Icon = stat.icon;
             return (
-              <div key={idx} className="bg-white rounded-lg p-4 text-center shadow-sm">
-                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Icon className="w-5 h-5 text-gray-600" />
+              <div 
+                key={idx} 
+                className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-orange-50 to-amber-50 mb-4">
+                  <Icon className={`w-8 h-8 ${stat.color}`} />
                 </div>
-                <div className="text-lg font-bold">{stat.number}</div>
-                <div className="text-xs text-gray-500">{stat.label}</div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">{stat.number}</div>
+                <div className="text-sm font-medium text-gray-600">{stat.label}</div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Services Tabs */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">
+            Our <span className="text-orange-600">Financial Services</span>
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Comprehensive financial solutions tailored to meet your specific needs
+          </p>
+        </div>
+
+        {/* Simple Tabs */}
+        <div className="flex flex-wrap gap-2 justify-center mb-10">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-6 py-3 rounded-lg font-medium transition-all ${
+                activeTab === tab.id
+                  ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:border-orange-300'
+              }`}
+            >
+              {tab.name} ({tab.count})
+            </button>
+          ))}
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {activeServices.map((service) => {
+            const iconUrl = getCustomIcon(service.id);
+
+            return (
+              <div
+                key={service.id}
+                onClick={() => navigate(`/loan/${service.id}`)}
+                className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm hover:shadow-md hover:border-orange-200 transition-all duration-300 cursor-pointer"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-50 to-amber-50 flex items-center justify-center flex-shrink-0">
+                    <img src={iconUrl} alt={service.name} className="w-8 h-8 object-contain" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-gray-900 mb-1">{service.name}</h3>
+                    <p className="text-sm text-gray-500">{service.marathiName}</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">{service.description}</p>
+
+                {/* Simple Info Badges */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {service.maxAmount && (
+                    <span className="text-xs px-2 py-1 bg-orange-50 text-orange-700 rounded">
+                      Max: {service.maxAmount}
+                    </span>
+                  )}
+                  {service.tenure && (
+                    <span className="text-xs px-2 py-1 bg-amber-50 text-amber-700 rounded">
+                      Tenure: {service.tenure}
+                    </span>
+                  )}
+                  {service.duration && (
+                    <span className="text-xs px-2 py-1 bg-yellow-50 text-yellow-700 rounded">
+                      {service.duration}
+                    </span>
+                  )}
+                </div>
+
+                <button
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 text-white text-sm font-medium hover:shadow-md transition"
+                  onClick={(e) => { e.stopPropagation(); navigate(`/loan/${service.id}`); }}
+                >
+                  View Details
+                  <ArrowRight className="w-4 h-4" />
+                </button>
               </div>
             );
           })}
         </div>
 
-         {/* Tabs */}
-        <div className="flex flex-wrap gap-3 justify-center mb-8">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-shadow ${
-                activeTab === tab.id
-                  ? 'bg-white shadow-sm border border-gray-200 text-orange-600'
-                  : 'bg-gray-50 text-gray-700 border border-gray-100 hover:shadow-sm'
-              }`}
-            >
-              <span>{tab.name}</span>
-              <span className="ml-2 inline-block px-2 py-0.5 text-xs font-semibold rounded-full bg-gray-100 text-gray-700">
-                {tab.count}
-              </span>
-            </button>
-          ))}
-        </div>
-
-        {/* Services grid */}
-        <div className="mb-12">
-          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 text-center">
-            {tabs.find(tab => tab.id === activeTab)?.name}
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {activeServices.map((service) => {
-              const iconUrl = getCustomIcon(service.id);
-
-              return (
-                <article
-                  key={service.id}
-                  onClick={() => navigate(`/loan/${service.id}`)}
-                  className="bg-white rounded-xl border border-gray-100 p-5 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer"
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 flex items-center justify-center">
-                        <img src={iconUrl} alt={service.name} className="w-12 h-12 object-contain" />
-                      </div>
-                      <div>
-                        <h3 className="text-md font-semibold text-gray-900">{service.name}</h3>
-                        <div className="text-xs text-gray-500">{service.marathiName}</div>
-                      </div>
-                    </div>
-
-                    <div className="text-xs text-gray-500">{service.category}</div>
-                  </div>
-
-                  <p className="text-sm text-gray-600 mb-4 line-clamp-3">{service.description}</p>
-
-                  {/* Loan details row */}
-                  {(service.interestRate || service.maxAmount || service.tenure) && (
-                    <div className="grid grid-cols-3 gap-3 text-xs mb-4">
-                      <div className="bg-gray-50 rounded-md p-2 text-center">
-                        <div className="font-semibold text-gray-800 text-sm">{service.interestRate || '-'}</div>
-                        <div className="text-xs text-gray-500">Rate</div>
-                      </div>
-                      <div className="bg-gray-50 rounded-md p-2 text-center">
-                        <div className="font-semibold text-gray-800 text-sm">{service.maxAmount || '-'}</div>
-                        <div className="text-xs text-gray-500">Max</div>
-                      </div>
-                      <div className="bg-gray-50 rounded-md p-2 text-center">
-                        <div className="font-semibold text-gray-800 text-sm">{service.tenure || '-'}</div>
-                        <div className="text-xs text-gray-500">Tenure</div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Service details */}
-                  {(service.duration || service.cost) && (
-                    <div className="mb-4 text-xs text-gray-600">
-                      <div className="flex justify-between">
-                        <div>{service.duration || ''}</div>
-                        <div className="font-semibold">{service.cost || ''}</div>
-                      </div>
-                    </div>
-                  )}
-
-                  <div className="mt-2">
-                    <button
-                      className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-orange-50 text-orange-600 text-sm font-semibold hover:bg-orange-100 transition"
-                      onClick={(e) => { e.stopPropagation(); navigate(`/loan/${service.id}`); }}
-                    >
-                      <span>View Details</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-
-          {activeServices.length === 0 && (
-            <div className="text-center py-12 bg-white rounded-lg border border-gray-100 shadow-sm mt-6">
-              <div className="mx-auto w-14 h-14 rounded-full bg-gray-100 flex items-center justify-center mb-4">
-                <Search className="w-6 h-6 text-gray-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">No services found</h3>
-              <p className="text-sm text-gray-600">Try searching with a different keyword or browse other categories.</p>
+        {activeServices.length === 0 && (
+          <div className="text-center py-12">
+            <div className="w-16 h-16 mx-auto rounded-full bg-orange-50 flex items-center justify-center mb-4">
+              <Search className="w-8 h-8 text-orange-600" />
             </div>
-          )}
-        </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">No services found</h3>
+            <p className="text-gray-600">Try searching or browse other categories</p>
+          </div>
+        )}
+      </section>
 
-        {/* CTA */}
-        <div className="bg-white rounded-xl border border-gray-100 p-8 text-center shadow-md">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">Ready to apply or need help?</h2>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">Speak with our local advisors for quick guidance — minimal documentation, fast approvals and trusted local support.</p>
+      {/* CTA Section */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+        <div className="bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl p-8 text-center text-white">
+          <h2 className="text-3xl font-bold mb-4">Need Financial Assistance?</h2>
+          <p className="text-orange-100 text-lg mb-8">
+            Our experts are ready to guide you through the process with personalized solutions.
+          </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link to="/apply" className="px-6 py-3 rounded-md bg-orange-600 text-white text-sm font-medium hover:bg-orange-700 transition">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link 
+              to="/apply" 
+              className="px-8 py-3 bg-white text-orange-600 font-bold rounded-lg hover:bg-orange-50 transition flex items-center gap-2"
+            >
               Apply Now
+              <ArrowRight className="w-4 h-4" />
             </Link>
 
-            <a href="tel:9850366753" className="px-6 py-3 rounded-md border border-gray-200 bg-white text-sm text-gray-700 hover:shadow-sm transition flex items-center justify-center gap-2">
-              Call Us: <span className="font-semibold">9850366753</span>
+            <a 
+              href="tel:9850366753"
+              className="px-8 py-3 border-2 border-white/30 text-white font-bold rounded-lg hover:bg-white/10 transition flex items-center gap-2"
+            >
+              <Phone className="w-4 h-4" />
+              Call: 9850366753
             </a>
           </div>
-        </div>
 
+          <div className="flex flex-wrap justify-center gap-6 mt-8">
+            <div className="flex items-center gap-2">
+              <Check className="w-5 h-5" />
+              <span>Transparent Process</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-5 h-5" />
+              <span>Quick Approvals</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Check className="w-5 h-5" />
+              <span>Local Support</span>
+            </div>
+          </div>
+        </div>
       </section>
+
+      {/* Floating Buttons */}
+      <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-4">
+        <a
+          href="https://wa.me/919850366753"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg hover:shadow-xl hover:scale-105 transition"
+          title="Chat on WhatsApp"
+        >
+          <MessageCircle className="w-6 h-6" />
+        </a>
+
+        <button
+          onClick={() => setShowEmiPopup(true)}
+          className="flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg hover:shadow-xl hover:scale-105 transition"
+          title="EMI Calculator"
+        >
+          <Calculator className="w-6 h-6" />
+        </button>
+      </div>
+
+      {/* EMI Calculator Popup */}
+      <EmiCalculator
+        visible={showEmiPopup}
+        onClose={() => setShowEmiPopup(false)}
+        initialAmount={emiPrefill.amount}
+        initialRate={emiPrefill.rate}
+        initialTenure={emiPrefill.tenure}
+      />
     </div>
   );
 }
